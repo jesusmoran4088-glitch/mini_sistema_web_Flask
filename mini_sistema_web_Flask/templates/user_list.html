@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de usuarios{% endblock %}
+
+{% block content %}
+<h1>Usuarios registrados</h1>
+
+{% if users %}
+    <ul class="user-list">
+        {% for user in users %}
+            <li>
+                <a href="{{ url_for('user.profile', id=user.id) }}">
+                    {{ user.username|capitalize }}
+                </a>
+                <span class="email">({{ user.email }})</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay usuarios registrados aún. ¡Sé el primero en
+        <a href="{{ url_for('user.register') }}">registrarte</a>!
+    </p>
+{% endif %}
+{% endblock %}

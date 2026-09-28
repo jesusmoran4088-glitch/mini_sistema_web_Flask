@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Perfil de {{ user.username }}{% endblock %}
+
+{% block content %}
+<h1>Perfil de {{ user.username|capitalize }}</h1>
+
+<div class="profile-card">
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+    <p><strong>Correo:</strong> {{ user.email }}</p>
+</div>
+
+{% if session.get('user_id') == user.id %}
+    <a href="{{ url_for('user.edit_profile', id=user.id) }}" class="btn btn-secondary">Editar</a>
+    <form action="{{ url_for('user.delete_profile', id=user.id) }}" method="POST" style="display:inline;">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-danger"
+                onclick="return confirm('¿Seguro que deseas eliminar tu cuenta?');">
+            Eliminar cuenta
+        </button>
+    </form>
+{% endif %}
+{% endblock %}

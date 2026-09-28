@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+Flask-WTF
+PyMySQL
+email-validator
+WTForms
+cryptography

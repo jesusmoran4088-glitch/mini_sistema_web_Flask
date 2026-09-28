@@ -1,0 +1,13 @@
+<nav class="navbar">
+    <a href="{{ url_for('index') }}" class="brand">🏠 Inicio</a>
+    <div class="nav-links">
+        {% if session.get('user_id') %}
+            <span>Hola, <strong>{{ session.get('username')|capitalize }}</strong></span>
+            <a href="{{ url_for('user.profile', id=session.get('user_id')) }}">Mi perfil</a>
+            <a href="{{ url_for('user.logout') }}">Cerrar sesión</a>
+        {% else %}
+            <a href="{{ url_for('user.register') }}">Registrarse</a>
+            <a href="{{ url_for('user.login') }}">Iniciar sesión</a>
+        {% endif %}
+    </div>
+</nav>
