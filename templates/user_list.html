@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Inicio · Flask Users{% endblock %}
+
+{% block content %}
+<h1>Bienvenido al Mini Sistema de Usuarios</h1>
+<p>Usuarios registrados: <strong>{{ users|length }}</strong></p>
+
+{% if users %}
+<table class="table">
+    <thead>
+        <tr><th>#</th><th>Usuario</th><th>Email</th><th>Creado</th><th>Acciones</th></tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.username|capitalize }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.created_at.strftime("%Y-%m-%d") }}</td>
+            <td>
+                <a class="btn" href="{{ url_for('users.profile', id=user.id) }}">Ver</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="empty">No hay usuarios aún. <a href="{{ url_for('users.register') }}">¡Regístrate!</a></p>
+{% endif %}
+{% endblock %}

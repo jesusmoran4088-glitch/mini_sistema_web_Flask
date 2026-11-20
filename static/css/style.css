@@ -1,0 +1,38 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: #f4f6f8; color: #333; min-height: 100vh;
+    display: flex; flex-direction: column;
+}
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #2c3e50; color: white; padding: 1rem 2rem;
+}
+.navbar a { color: white; text-decoration: none; margin-left: 1rem; }
+.navbar .logo { font-weight: bold; font-size: 1.2rem; }
+.container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; flex: 1; }
+h1 { margin-bottom: 1rem; color: #2c3e50; }
+.table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
+.table th, .table td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; text-align: left; }
+.table th { background: #ecf0f1; }
+.form { background: white; padding: 1.5rem; border-radius: 8px; max-width: 480px; }
+.field { margin-bottom: 1rem; display: flex; flex-direction: column; }
+.field label { margin-bottom: 0.3rem; font-weight: 600; }
+.input { padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+.error { color: #e74c3c; font-size: 0.85rem; margin-top: 0.2rem; }
+.btn {
+    display: inline-block; padding: 0.6rem 1rem; border-radius: 6px;
+    background: #bdc3c7; color: #2c3e50; text-decoration: none;
+    border: none; cursor: pointer; font-size: 0.95rem; margin-top: 0.5rem;
+}
+.btn-primary { background: #3498db; color: white; }
+.btn-danger { background: #e74c3c; color: white; }
+.card { background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
+.flash-messages { margin-bottom: 1rem; }
+.flash { padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 0.5rem; }
+.flash-success { background: #d4edda; color: #155724; }
+.flash-danger  { background: #f8d7da; color: #721c24; }
+.flash-warning { background: #fff3cd; color: #856404; }
+.flash-info    { background: #d1ecf1; color: #0c5460; }
+.footer { text-align: center; padding: 1rem; color: #888; font-size: 0.85rem; }
+.empty { background: white; padding: 1.5rem; border-radius: 8px; }
