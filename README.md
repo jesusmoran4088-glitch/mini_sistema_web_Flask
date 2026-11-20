@@ -32,3 +32,5 @@ Proyecto Flask para el desarrollo de un mini sistema web (Actividad U4 - A2).
 
 pytest --cov=.
 
+
+
